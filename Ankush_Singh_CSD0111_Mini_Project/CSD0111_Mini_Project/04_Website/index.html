@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Register | Student Record Management System</title>
+  <link rel="icon" href="images/register.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header><div class="bar"><a class="brand" href="#register"><img src="images/register.png" alt="">Class Register</a><span>Section F &nbsp; / &nbsp; Semester I</span></div></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">CSE · AI &amp; ML</p><h1>Student records</h1><p class="subtitle">Maths, C Programming and AI &amp; Ethics marks for the class.</p></div>
+      <button id="add">+ Add student</button></div>
+    <section class="summary" aria-label="Class summary">
+      <div><span>Students</span><strong id="count"></strong></div><div><span>Class average / 100</span><strong id="average"></strong></div><div><span>Highest total / 300</span><strong id="highest"></strong></div>
+    </section>
+    <section class="panel" id="register">
+      <div class="toolbar"><h2>Marks register</h2><label class="search">Find a student<input type="search" id="search" placeholder="Name or roll number"></label></div>
+      <p id="notice" role="status" aria-live="polite"></p>
+      <div class="scroll"><table><thead><tr><th>Roll no.</th><th>Student</th><th>Maths</th><th>C</th><th>AI</th><th>Total</th><th>Average</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="tablefoot"><p class="foot" id="matches"></p><button class="secondary" id="export">Download class CSV</button></div>
+    </section>
+    <footer>Project Studio I · ITM University, Gwalior<span>Sample class data</span></footer>
+  </main>
+  <dialog id="editor"><form id="form" novalidate><p class="eyebrow">Marks register</p><h2 id="formTitle">Add student</h2>
+    <label>Roll number<input id="roll" maxlength="12" placeholder="F021" required></label>
+    <label>Full name<input id="studentName" maxlength="50" required></label>
+    <fieldset><legend>Marks out of 100</legend><div class="scores">
+      <label>Maths<input id="maths" type="number" min="0" max="100" step="1" required></label>
+      <label>C Programming<input id="c" type="number" min="0" max="100" step="1" required></label>
+      <label>AI &amp; Ethics<input id="ai" type="number" min="0" max="100" step="1" required></label></div></fieldset>
+    <p id="error" role="alert"></p><div class="buttons"><button type="button" class="secondary" id="cancel">Cancel</button><button>Save record</button></div>
+  </form></dialog>
+  <dialog id="remover"><h2>Remove student?</h2><p id="deleteText"></p><div class="buttons"><button class="secondary" id="keep">Keep record</button><button class="danger" id="confirm">Remove</button></div></dialog>
+</body></html>
